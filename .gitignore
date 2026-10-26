@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+backend/brandlens.db
+backend/brandlens.db-*
+backend/data/
+frontend/node_modules/
+frontend/dist/
+venv/
+.env.*
+!.env.example

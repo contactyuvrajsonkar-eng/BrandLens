@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: brandlens-demo
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    envVars:
+      - key: BRANDLENS_DB_PATH
+        value: /tmp/brandlens.db
