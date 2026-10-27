@@ -250,9 +250,9 @@ def build_pdf() -> None:
     ]
     story.append(_table(info, [usable * 0.27, usable * 0.38, usable * 0.35]))
     story.extend([Spacer(1, 5 * mm), _callout(
-        '<b>Submission links:</b> The app and source must be published to public URLs before this PDF is filed. '
-        'This local build includes a Render deployment blueprint; no public URL is claimed until deployment '
-        'and repository publication are completed.',
+            '<b>Live demo:</b> <link href="https://brandlens-demo-hr8n.onrender.com" color="#27604F">https://brandlens-demo-hr8n.onrender.com</link><br/>'
+            '<b>Source repository:</b> <link href="https://github.com/contactyuvrajsonkar-eng/BrandLens" color="#27604F">https://github.com/contactyuvrajsonkar-eng/BrandLens</link><br/>'
+            'Both public links have been verified. The demo was tested in a private browser window.',
         usable,
         styles,
         colors.HexColor("#FFF8EA"),
@@ -392,15 +392,24 @@ def build_pdf() -> None:
         [
             Spacer(1, 6 * mm),
             _callout(
-                "<b>Before filing:</b> publish the source as a public repository, deploy the Docker service, "
-                "open the live app link in a private window, verify that a first-time visitor can run the sample, "
-                "then replace the pending links in this PDF with the final public URLs.",
+                "<b>Submission verified:</b> The public demo and source repository links are included above. "
+                "The live demo was tested in a private browser window.",
                 usable,
                 styles,
                 colors.HexColor("#FFF8EA"),
             ),
             Spacer(1, 4 * mm),
-            _paragraph("Project files: README.md  |  Dockerfile  |  render.yaml  |  backend/  |  frontend/", styles["small"]),
+            
+_paragraph(
+    'Project files: '
+    '<link href="https://github.com/contactyuvrajsonkar-eng/BrandLens/blob/main/README.md" color="#27604F">README.md</link>'
+    ' | <link href="https://github.com/contactyuvrajsonkar-eng/BrandLens/blob/main/Dockerfile" color="#27604F">Dockerfile</link>'
+    ' | <link href="https://github.com/contactyuvrajsonkar-eng/BrandLens/blob/main/render.yaml" color="#27604F">render.yaml</link>'
+    ' | <link href="https://github.com/contactyuvrajsonkar-eng/BrandLens/tree/main/backend" color="#27604F">backend/</link>'
+    ' | <link href="https://github.com/contactyuvrajsonkar-eng/BrandLens/tree/main/frontend" color="#27604F">frontend/</link>',
+    styles["small"]
+),
+
         ]
     )
 
